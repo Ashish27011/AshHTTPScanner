@@ -1,0 +1,21 @@
+def show_report(target_address, http_response, http_status_code, protocol, header_list, response_time):
+    print("Target URL".ljust(19),":",target_address)
+    print("Protocol".ljust(19),":",protocol.get("protocol"))
+    print("")
+    print("-"*120)
+    print("HTTP RESPONSE")
+    print("-"*120)
+    print("")
+    print("Status Code ".ljust(19),":",http_status_code.get("Status Code", "Unknown"))
+    print("Status Message".ljust(19),":","OK")
+    print("")
+    print("-"*120)
+    print("HEADERS")
+    print("-"*130)
+    print("")
+    for loop in header_list: 
+     final_http = http_response.get(loop)
+     print(loop.ljust(19),":", final_http)
+    print("Response Time".ljust(19),":",f"{response_time:.3f}s") 
+    print("")                
+            
